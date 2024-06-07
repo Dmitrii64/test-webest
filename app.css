@@ -1,0 +1,146 @@
+:root {
+    --card-shadow: rgba(0, 0, 0, .2);
+}
+
+* {
+    box-sizing: border-box;
+}
+
+[hidden] {
+    display: none;
+}
+
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    font-size: 1rem;
+}
+
+.container {
+    max-width: 1440px;
+    margin: 0 auto;
+    padding: 1rem;
+}
+
+.header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 2rem;
+}
+
+.cart-count {
+    width: 1.4rem;
+    height: 1.4rem;
+    border-radius: 50%;
+    background: red;
+    color: white;
+    font-size: .8rem;
+    display: grid;
+    place-items: center;
+}
+
+.cart-count:empty {
+    display: none;
+}
+
+.catalog {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 2rem;
+}
+
+.product-card {
+    padding: .5rem;
+    border-radius: .8rem;
+    box-shadow: 0 0 10px 0 var(--card-shadow);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+}
+
+.product-card__cover {
+    border-radius: .8rem;
+    overflow: hidden;
+}
+
+.product-card__image {
+    max-width: 100%;
+    object-fit: cover;
+}
+
+.product-card__link {
+    display: flex;
+}
+
+.product-card__add-to-cart {
+    width: 100%;
+    background: coral;
+    color: white;
+    border: none;
+    padding: .8rem;
+    border-radius: .8rem;
+    cursor: pointer;
+}
+
+.product-card__description {
+    max-width: 400px;
+    text-align: center;
+}
+
+.popup {
+    width: 100vw;
+    height: 100vh;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-color: rgba(0, 0, 0, .5);
+    z-index: 5;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.hidden {
+    display: none;
+}
+
+.popup__wrapper {
+    background-color: white;
+    border-radius: 20px;
+    padding: 20px;
+}
+
+.popup__close {
+    cursor: pointer;
+    width: 40px;
+    height: 40px;
+    position: absolute;
+    top: 40px;
+    right: 40px;
+    background-color: transparent;
+    border: none;
+}
+
+.popup__close::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    right: 0;
+    width: 40px;
+    height: 3px;
+    background-color: white;
+    transform: rotate(45deg);
+}
+
+.popup__close::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    right: 0;
+    width: 40px;
+    height: 3px;
+    background-color: white;
+    transform: rotate(-45deg);
+}
